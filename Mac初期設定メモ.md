@@ -4,7 +4,8 @@
 [iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
 [homebrew]: https://brew.sh/index_ja
- 
+[Java]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+
 Macの初期設定メモ
 
 
@@ -25,7 +26,7 @@ Macの初期設定メモ
   * `ライブ変換`のチェックを外す
   * `Windows風のキー操作`にチェックを入れる
   * `候補表示`:`フォント`を`ヒラギノ角ゴシックW1`に変更
-  * `候補表示`:`フォントサイズ`を`10`に変更
+  * `候補表示`:`フォントサイズ`を`12`に変更
 * `共有` → `コンピューター名` → `編集`をクリックしてホスト名を設定する
 * `アクセシビリティ` → `キーボード` → `複合キーを有効にする`にチェックを入れる
 
@@ -54,7 +55,7 @@ chmod +x ~/.bashrc
 ```
 
 
-# インストールソフト
+# アプリインストール
 
 ## Google Chrome
 [公式サイト][Google Chrome]よりダウンロードしてインストール
@@ -96,6 +97,16 @@ chmod +x ~/.bashrc
 
 ## AppCleaner
 [公式サイト][AppCleaner]よりダウンロードしてインストールする
+
+## Java
+[公式サイト][Java]よりダウンロードしてインストールする  
+必要なバージョンをインストールする
+
+インストール完了後下記コマンドでパスを通す
+```
+echo 'export JAVA_HOME=`/usr/libexec/java_home -v 11`' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+```
 
 ## homebrew
 [公式サイト][homebrew]よりインストールコマンドを確認し、ターミナルで実行する
