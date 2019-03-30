@@ -1,6 +1,7 @@
 [Xcode]: https://itunes.apple.com/jp/app/xcode/id497799835?mt=12
 [Google Chrome]: https://www.google.co.jp/chrome/
 [Visulal Studio Code]: https://code.visualstudio.com/
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Alfred]: https://www.alfredapp.com/
 [iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
@@ -71,23 +72,26 @@ chmod +x ~/.bashrc
 `Command + K` → `Command + S`でキーボードショートカットを開き、右上の`{}`をクリックして`keybinding.json`を直接開き下記設定を追加する
 ```
 [{
+  // 大文字に変換
+  "key": "ctrl+shift+u",
+  "command": "editor.action.transformToUppercase"
+},{
+  // カーソル位置から行頭まで選択
   "key": "ctrl+shift+a",
   "command": "cursorHomeSelect",
   "when": "editorTextFocus"
 }, {
+  // カーソル位置から行末まで選択
   "key": "ctrl+shift+e",
   "command": "cursorEndSelect",
   "when": "editorTextFocus"
-}, {
-  "key": "ctrl+shift+left",
-  "command": "cursorWordStartLeftSelect",
-  "when": "editorTextFocus"
-}, {
-  "key": "ctrl+shift+right",
-  "command": "cursorWordEndRightSelect",
-  "when": "editorTextFocus"
+}]en": "editorTextFocus"
 }]
 ```
+
+## IntelliJ IDEA
+[公式サイト][IntelliJ IDEA]よりダウンロードしてインストールする
+※ 無料で使用できるのはCommunity
 
 ## Alfred3
 [公式サイト][Alfred]よりダウンロードしてインストールする
@@ -111,6 +115,7 @@ chmod +x ~/.bashrc
 echo 'export JAVA_HOME=`/usr/libexec/java_home -v 11`' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ```
+※ Javaは複数バージョンインストール可能。現在インストールされているバージョンを確認するときは`/usr/libexec/java_home`コマンドで確認できる。
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
@@ -130,3 +135,20 @@ echo 'export M3_HOME=/usr/local/Cellar/maven/3.6.0/libexec' >> ~/.bashrc
 echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
 ```
 ※ `M3_HOME`に設定するパスはインストール後に表示される`Maven home`のパスを設定する。`mvn -v`コマンドでも確認できる
+
+## Node.js
+まずHomebrewよりNodebrewをインストール
+```
+brew install nodebrew
+nodebrew setup
+```
+インストール後下記コマンドでパスを通す
+```
+echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
+```
+次にNode.js本体をインストールする
+```
+nodebrew install-binary latest
+nodebrew use 11
+```
+※ インストールされたNode.jsのバージョンと現在使用してるバージョンは`nodebrew ls`で確認できる
