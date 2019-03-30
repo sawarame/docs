@@ -3,7 +3,7 @@
 [Alfred]: https://www.alfredapp.com/
 [iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
-[homebrew]: https://brew.sh/index_ja
+[Homebrew]: https://brew.sh/index_ja
 [Java]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 Macの初期設定メモ
@@ -108,8 +108,21 @@ echo 'export JAVA_HOME=`/usr/libexec/java_home -v 11`' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ```
 
-## homebrew
-[公式サイト][homebrew]よりインストールコマンドを確認し、ターミナルで実行する
+## Homebrew
+[公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
+## Maven
+Homebrewでインストール
+```
+brew install maven
+```
+
+インストール完了後下記コマンドでパスを通す
+```
+echo 'export M3_HOME=/usr/local/Cellar/maven/3.6.0/libexec' >> ~/.bashrc
+echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
+```
+※ `M3_HOME`に設定するパスはインストール後に表示される`Maven home`のパスを設定する。`mvn -v`コマンドでも確認できる
