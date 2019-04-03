@@ -7,6 +7,7 @@
 [AppCleaner]: https://freemacsoft.net/appcleaner/
 [Homebrew]: https://brew.sh/index_ja
 [Java]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Apache Derby]: https://db.apache.org/derby/releases/release-10.14.2.0.cgi
 
 Macの初期設定メモ
 
@@ -152,3 +153,31 @@ nodebrew install-binary latest
 nodebrew use 11
 ```
 ※ インストールされたNode.jsのバージョンと現在使用してるバージョンは`nodebrew ls`で確認できる
+
+## Apache Derby
+[公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する  
+下記はzipでダウンロードした物をホームディレクトリのdevフォルダに展開する例
+```
+cd ~/dev
+unzip ~/Downloads/db-derby-10.14.2.0-bin.zip
+```
+
+下記コマンドでパスを通す
+```
+echo 'export DERBY_HOME=$HOME/dev/db-derby-10.14.2.0-bin' >> ~/.bashrc
+```
+
+永続化用フォルダを作成する
+```
+mkdir ~/derby
+```
+
+Derbyの起動
+```
+java -jar $DERBY_HOME/lib/derbyrun.jar server start &
+```
+
+Derbyの終了
+```
+java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
+```
