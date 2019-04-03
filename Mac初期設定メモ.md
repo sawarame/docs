@@ -174,10 +174,21 @@ mkdir ~/derby
 
 Derbyの起動
 ```
+cd ~/derby
 java -jar $DERBY_HOME/lib/derbyrun.jar server start &
+```
+
+CLIの起動〜終了
+```
+cd ~/derby
+java -jar $DERBY_HOME/lib/derbyrun.jar ij
+ij> quit;
 ```
 
 Derbyの終了
 ```
+cd ~/derby
 java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
 ```
+
+
