@@ -165,6 +165,11 @@ brew install mysql
 mysql.server start
 ```
 
+### 初期設定
+```
+mysql_secure_installation
+```
+
 ### 停止
 ```
 mysql.server stop
