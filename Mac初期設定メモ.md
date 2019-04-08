@@ -154,6 +154,22 @@ nodebrew use 11
 ```
 ※ インストールされたNode.jsのバージョンと現在使用してるバージョンは`nodebrew ls`で確認できる
 
+## MySQL
+Homebrewでインストール
+```
+brew install mysql
+```
+
+### 起動
+```
+mysql.server start
+```
+
+### 停止
+```
+mysql.server stop
+```
+
 ## Apache Derby
 [公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する  
 下記はzipでダウンロードした物をホームディレクトリのdevフォルダに展開する例
