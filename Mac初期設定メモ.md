@@ -35,26 +35,24 @@ Macの初期設定メモ
 
 # `.bash_profile` `.bashrc`作成
 `.bash_profile`を編集
-```
-vi ~/.bash_profile
-```
+```bash
+$ vi ~/.bash_profile
 
-下記内容を記載
-```
+# 下記内容を記載
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 ```
 
 `.bash_profile`に実行権限を付与
-```
-chmod +x ~/.bash_profile
+```bash
+$ chmod +x ~/.bash_profile
 ```
 
 下記コマンドで`.bashrc`を作成する
-```
-touch ~/.bashrc
-chmod +x ~/.bashrc
+```bash
+$ touch ~/.bashrc
+$ chmod +x ~/.bashrc
 ```
 
 
@@ -71,7 +69,7 @@ chmod +x ~/.bashrc
 
 ### 設定
 `Command + K` → `Command + S`でキーボードショートカットを開き、右上の`{}`をクリックして`keybinding.json`を直接開き下記設定を追加する
-```
+```json
 [{
   // 大文字に変換
   "key": "ctrl+shift+u",
@@ -86,7 +84,6 @@ chmod +x ~/.bashrc
   "key": "ctrl+shift+e",
   "command": "cursorEndSelect",
   "when": "editorTextFocus"
-}]en": "editorTextFocus"
 }]
 ```
 
@@ -112,7 +109,7 @@ chmod +x ~/.bashrc
 必要なバージョンをインストールする
 
 インストール完了後下記コマンドでパスを通す
-```
+```bash
 echo 'export JAVA_HOME=`/usr/libexec/java_home -v 11`' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ```
@@ -120,96 +117,103 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```bash
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## Maven
 Homebrewでインストール
-```
-brew install maven
+```bash
+$ brew install maven
 ```
 
 インストール完了後下記コマンドでパスを通す
-```
-echo 'export M3_HOME=/usr/local/Cellar/maven/3.6.0/libexec' >> ~/.bashrc
-echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
+```bash
+$ echo 'export M3_HOME=/usr/local/Cellar/maven/3.6.0/libexec' >> ~/.bashrc
+$ echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
 ```
 ※ `M3_HOME`に設定するパスはインストール後に表示される`Maven home`のパスを設定する。`mvn -v`コマンドでも確認できる
 
 ## Node.js
 まずHomebrewよりNodebrewをインストール
-```
-brew install nodebrew
-nodebrew setup
+```bash
+$ brew install nodebrew
+$ nodebrew setup
 ```
 インストール後下記コマンドでパスを通す
-```
-echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
+```bash
+$ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
 ```
 次にNode.js本体をインストールする
+```bash
+$ nodebrew install-binary latest
+$ nodebrew use 11
+# インストールされたNode.jsのバージョンと現在使用してるバージョンは下記コマンドで確認できる
+$ nodebrew ls
 ```
-nodebrew install-binary latest
-nodebrew use 11
-```
-※ インストールされたNode.jsのバージョンと現在使用してるバージョンは`nodebrew ls`で確認できる
 
 ## MySQL
 Homebrewでインストール
-```
-brew install mysql
+```bash
+$ brew install mysql
 ```
 
 ### 起動
-```
-mysql.server start
+```bash
+$ mysql.server start
 ```
 
 ### 初期設定
+```bash
+$ mysql_secure_installation
 ```
-mysql_secure_installation
+
+### 設定ファイルの場所
+```bash
+/usr/local/etc/my.cnf
+# mysql --help | grep my.cnf で確認できる
 ```
 
 ### 停止
-```
-mysql.server stop
+```bash
+$ mysql.server stop
 ```
 
 ## Apache Derby
 [公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する  
 下記はzipでダウンロードした物をホームディレクトリのdevフォルダに展開する例
-```
-cd ~/dev
-unzip ~/Downloads/db-derby-10.14.2.0-bin.zip
+```bash
+$ cd ~/dev
+$ unzip ~/Downloads/db-derby-10.14.2.0-bin.zip
 ```
 
 下記コマンドでパスを通す
-```
-echo 'export DERBY_HOME=$HOME/dev/db-derby-10.14.2.0-bin' >> ~/.bashrc
+```bash
+$ echo 'export DERBY_HOME=$HOME/dev/db-derby-10.14.2.0-bin' >> ~/.bashrc
 ```
 
 永続化用フォルダを作成する
-```
-mkdir ~/derby
+```bash
+$ mkdir ~/derby
 ```
 
 Derbyの起動
-```
-cd ~/derby
-java -jar $DERBY_HOME/lib/derbyrun.jar server start &
+```bash
+$ cd ~/derby
+$ java -jar $DERBY_HOME/lib/derbyrun.jar server start &
 ```
 
 CLIの起動〜終了
-```
-cd ~/derby
-java -jar $DERBY_HOME/lib/derbyrun.jar ij
+```bash
+$ cd ~/derby
+$ java -jar $DERBY_HOME/lib/derbyrun.jar ij
 ij> quit;
 ```
 
 Derbyの終了
-```
-cd ~/derby
-java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
+```bash
+$ cd ~/derby
+$ java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
 ```
 
 
