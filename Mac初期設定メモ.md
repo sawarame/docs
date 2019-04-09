@@ -168,16 +168,14 @@ $ mysql.server start
 $ mysql_secure_installation
 ```
 
-### 設定ファイルの場所
-```bash
-/usr/local/etc/my.cnf
-# mysql --help | grep my.cnf で確認できる
-```
-
 ### 停止
 ```bash
 $ mysql.server stop
 ```
+
+### メモ
+* 設定ファイル：`/usr/local/etc/my.cnf`(`mysql --help | grep my.cnf`で確認)
+* データディレクトリ：`/usr/local/var/mysql/`(MySQLコンソールで`show variables like 'datadir';`)
 
 ## Apache Derby
 [公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する  
