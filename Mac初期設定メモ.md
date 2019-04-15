@@ -6,7 +6,7 @@
 [iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
 [Homebrew]: https://brew.sh/index_ja
-[Java]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Java]: http://jdk.java.net/
 [Apache Derby]: https://db.apache.org/derby/releases/release-10.14.2.0.cgi
 
 Macの初期設定メモ
