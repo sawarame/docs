@@ -6,7 +6,8 @@
 [iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
 [Homebrew]: https://brew.sh/index_ja
-[Java]: http://jdk.java.net/
+[Java8]: https://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html
+[OpenJDK]: http://jdk.java.net/
 [Apache Derby]: https://db.apache.org/derby/releases/release-10.14.2.0.cgi
 
 Macの初期設定メモ
@@ -105,15 +106,25 @@ $ chmod +x ~/.bashrc
 [公式サイト][AppCleaner]よりダウンロードしてインストールする
 
 ## Java
-[公式サイト][Java]よりダウンロードしてインストールする  
-必要なバージョンをインストールする
+[公式サイト][Java8]よりダウンロードしてインストールする  
+まずはJava8をインストール
 
 インストール完了後下記コマンドでパスを通す
 ```bash
-echo 'export JAVA_HOME=`/usr/libexec/java_home -v 11`' >> ~/.bashrc
+echo 'export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ```
+
 ※ Javaは複数バージョンインストール可能。現在インストールされているバージョンを確認するときは`/usr/libexec/java_home`コマンドで確認できる。
+11以上をインストールするときは[OpenJDK][OpenJDK]よりダウンロードして使用する（ライセンスの都合上）。
+
+```bash
+# JDK11をインストール
+$ cd ~/Downloads/
+$ wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz
+$ tar xvzf openjdk-11.0.2_osx-x64_bin.tar.gz
+$ sudo mv ~/Downloads/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
+```
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
