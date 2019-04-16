@@ -225,4 +225,14 @@ $ cd ~/derby
 $ java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
 ```
 
+## cf CLIインストール
+Homebrewでインストール
+```
+brew install cloudfoundry/tap/cf-cli
+```
 
+## tmuxインストール
+Homebrewでインストール
+```
+brew install tmux
+```
