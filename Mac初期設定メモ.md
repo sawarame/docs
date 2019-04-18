@@ -1,5 +1,6 @@
 [Xcode]: https://itunes.apple.com/jp/app/xcode/id497799835?mt=12
 [Google Chrome]: https://www.google.co.jp/chrome/
+[Google ime]: http://b.hatena.ne.jp/hotentry/it
 [Visulal Studio Code]: https://code.visualstudio.com/
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Alfred]: https://www.alfredapp.com/
@@ -64,6 +65,9 @@ $ chmod +x ~/.bashrc
 
 ## Google Chrome
 [公式サイト][Google Chrome]よりダウンロードしてインストール
+
+## Google日本語入力
+[公式サイト][Google ime]よりダウンロードしてインストール
 
 ## Visual Studio Code
 [公式サイト][Visulal Studio Code]よりダウンロードしてインストール
