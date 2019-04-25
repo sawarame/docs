@@ -24,7 +24,7 @@ Macの初期設定メモ
 * `Dock` → `Dockを自動的に表示・非表示`にチェックを入れる
 * `ディスプレイ` → `解像度`を`変更`に設定し、`スペースを拡大`を選択する
 * `キーボード` → `キーボード` → `装飾キー` → `Caps Lock`キーに`Command`を割り当てる
-* `キーボード` → `ショートカット` → `MissionControl` 
+* `キーボード` → `ショートカット` → `MissionControl`
   * `MissionControl` : `control + shift + Q`に設定
   * `右の操作スペースに移動` : `control + shift + ]`に設定
   * `左の操作スペースに移動` : `control + shift + [`に設定
@@ -98,7 +98,7 @@ vi ~/.config/karabiner/karabiner.json
 ```
 
 `profiles`->`complex_modifications`->`rules`に下記内容を記載する
-```
+```json
                 "rules": [
                     {
                         "description": "viノーマルモード移行時にかなモード解除",
@@ -188,7 +188,7 @@ vi ~/.config/karabiner/karabiner.json
 
 |履歴|ショートカット|
 |---|---|
-|履歴をクリ|割当なし|
+|履歴をクリア|割当なし|
 
 ## IntelliJ IDEA
 [公式サイト][IntelliJ IDEA]よりダウンロードしてインストールする
