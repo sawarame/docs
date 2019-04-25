@@ -1,10 +1,14 @@
 [Xcode]: https://itunes.apple.com/jp/app/xcode/id497799835?mt=12
 [Google Chrome]: https://www.google.co.jp/chrome/
-[Google ime]: http://b.hatena.ne.jp/hotentry/it
+[Google IME]: http://b.hatena.ne.jp/hotentry/it
+[Karabiner]: https://pqrs.org/osx/karabiner/
+[iTerm]: https://www.iterm2.com/
+[Atom]: https://atom.io/
+[Sublime Text]: http://www.sublimetext.com/
 [Visulal Studio Code]: https://code.visualstudio.com/
+[Clipy]: https://clipy-app.com/
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Alfred]: https://www.alfredapp.com/
-[iTerm]: https://www.iterm2.com/
 [AppCleaner]: https://freemacsoft.net/appcleaner/
 [Homebrew]: https://brew.sh/index_ja
 [Java8]: https://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html
@@ -57,6 +61,10 @@ $ touch ~/.bashrc
 $ chmod +x ~/.bashrc
 ```
 
+# 秘密鍵・公開鍵の作成
+```bash
+ssh-keygen -t rsa -b 4096 -C <メールアドレス>
+```
 
 # アプリインストール
 
@@ -67,7 +75,52 @@ $ chmod +x ~/.bashrc
 [公式サイト][Google Chrome]よりダウンロードしてインストール
 
 ## Google日本語入力
-[公式サイト][Google ime]よりダウンロードしてインストール
+[公式サイト][Google IME]よりダウンロードしてインストール
+
+## Karabinerインストール
+[公式サイト][Karabiner]よりインストール
+
+### `Caps Lock`キーに`Command`を割り当てる
+`Simple Modifications`タブの`From key`にcaps_lockを設定し、対応する`To key`にはleft_commandを設定する
+
+### `esc`キーを押下したときに日本語入力を解除するようにする
+下記jsonファイルを編集
+```bash
+vi ~/.config/karabiner/karabiner.json
+```
+`profiles`->`complex_modifications`->`rules`に下記内容を記載する
+```
+                "rules": [
+                  {
+                      "description": "esc押下でかなモード解除",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "escape"
+                              },
+                              "to": [
+                                  {
+                                      "key_code": "escape"
+                                  },
+                                  {
+                                      "key_code": "lang2"
+                                  }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                  }
+                ]
+```
+
+## iTerm2
+[公式サイト][iTerm]よりダウンロードしてインストールする
+
+## Atom
+[公式サイト][Atom]よりダウンロードしてインストール
+
+## Sublime Text
+[公式サイト][Sublime Text]よりダウンロードしてインストール
 
 ## Visual Studio Code
 [公式サイト][Visulal Studio Code]よりダウンロードしてインストール
@@ -92,6 +145,9 @@ $ chmod +x ~/.bashrc
 }]
 ```
 
+## Clipyインストール
+[公式サイト][Clipy]よりダウンロードしてインストール
+
 ## IntelliJ IDEA
 [公式サイト][IntelliJ IDEA]よりダウンロードしてインストールする
 ※ 無料で使用できるのはCommunity
@@ -102,9 +158,6 @@ $ chmod +x ~/.bashrc
 ### `Preferences` 設定
 * `General` → `Alfred Hotky`を`control + space`に変更
 * `Advanced` → `Force Keyboard`に`Romaji`を選択
-
-## iTerm2
-[公式サイト][iTerm]よりダウンロードしてインストールする
 
 ## AppCleaner
 [公式サイト][AppCleaner]よりダウンロードしてインストールする
