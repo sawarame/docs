@@ -77,6 +77,14 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 ## Google日本語入力
 [公式サイト][Google IME]よりダウンロードしてインストール
 
+下記辞書登録を行う
+|よみ|単語|
+|---|---|
+|コマンド|⌘|
+|オプション|⌥|
+|シフト|⇧|
+|コントロール|⌃|
+
 ## Karabinerインストール
 [公式サイト][Karabiner]よりインストール
 
@@ -88,28 +96,49 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 ```bash
 vi ~/.config/karabiner/karabiner.json
 ```
+
 `profiles`->`complex_modifications`->`rules`に下記内容を記載する
 ```
                 "rules": [
-                  {
-                      "description": "esc押下でかなモード解除",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "escape"
-                              },
-                              "to": [
-                                  {
-                                      "key_code": "escape"
-                                  },
-                                  {
-                                      "key_code": "lang2"
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
-                  }
+                    {
+                        "description": "viノーマルモード移行時にかなモード解除",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "lang2"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": "left_control"
+                                    },
+                                    {
+                                        "key_code": "lang2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
                 ]
 ```
 
@@ -148,9 +177,26 @@ vi ~/.config/karabiner/karabiner.json
 ## Clipyインストール
 [公式サイト][Clipy]よりダウンロードしてインストール
 
+### ショートカット設定
+環境設定から下記の様にショートカットを設定する
+
+|メニュー|ショートカット|
+|---|---|
+|メイン|割当なし|
+|履歴|⇧⌃C|
+|スニペット|⇧⌃S|
+
+|履歴|ショートカット|
+|---|---|
+|履歴をクリ|割当なし|
+
 ## IntelliJ IDEA
 [公式サイト][IntelliJ IDEA]よりダウンロードしてインストールする
 ※ 無料で使用できるのはCommunity
+
+### ショートカットキー変更
+`Command`+`,`で設定画面を開く  
+`Keymap`に`Sublime Text(Mac OS X)`を選択する
 
 ## Alfred3
 [公式サイト][Alfred]よりダウンロードしてインストールする
