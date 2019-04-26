@@ -91,7 +91,7 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 ### `Caps Lock`キーに`Command`を割り当てる
 `Simple Modifications`タブの`From key`にcaps_lockを設定し、対応する`To key`にはleft_commandを設定する
 
-### `esc`キーを押下したときに日本語入力を解除するようにする
+### viノーマルモード移行時に日本語入力を解除するようにする
 下記jsonファイルを編集
 ```bash
 vi ~/.config/karabiner/karabiner.json
@@ -196,7 +196,9 @@ vi ~/.config/karabiner/karabiner.json
 
 ### ショートカットキー変更
 `Command`+`,`で設定画面を開く  
-`Keymap`に`Sublime Text(Mac OS X)`を選択する
+`Plugins`で`VS Code Keymap`をインストールする  
+再起動後、`Command`+`,`で再度設定画面を開く  
+`Keymap`に`VS Code`を選択する
 
 ## Alfred3
 [公式サイト][Alfred]よりダウンロードしてインストールする
