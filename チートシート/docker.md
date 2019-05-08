@@ -1,0 +1,71 @@
+[Docker Desktop for Mac]: https://hub.docker.com/editions/community/docker-ce-desktop-mac
+
+dockerのあれこれ
+
+## インストール
+[docker hub][Docker Desktop for Mac]よりダウンロードしてインストール。  
+docker hubのアカウントがない場合は新規作成する  
+
+## `docker version`
+dockerをインストールすると`docker`コマンドが使用できるようになる。まず`docker login`でログイン処理を行う(docker hubのアカウント)
+
+## `docker images`
+ホストに存在するdockerのイメージの一覧を表示する
+
+## `docker pull <イメージ名>:<バージョン>`
+新しいdockerイメージを取得する
+```bash
+# CentOS6のイメージを取得
+$ docker pull centos:6
+```
+
+## `docker rmi <イメージ名>:<バージョン>`
+docketイメージを削除する。
+
+## `docker run -it --name <起動コンテナ名> -d <イメージ名>:<バージョン>`
+コンテナの作成と起動を行う。  
+`-it`オプションを指定しないとすぐ終了してしまうので、指定する。
+`-d`オプションでバックグラウンド実行する。
+```bash
+# CetntOS6のイメージを使用してコンテナを作成
+$ docker run -it --name mycentos6 -d centos:6
+```
+
+### 環境変数
+コンテナに環境変数を設定して起動するには`-e`オプションを使用する。  
+`-e <環境変数名>=<値>`
+
+### ホストとファイルを共有する
+ホストとファイルを共有する場合には`-v`オプションを使用する。  
+`-v <ホスト側の絶対パス>:<コンテナ側の絶対パス>`
+
+### ポートフォワーディング
+特定のポート番号を転送させるには`-p`オプションを使用する。  
+`-p <転送元ポート番号>:<転送先ポート番号>`
+
+## `docker ps [-a]`
+コンテナの一覧を表示する。`-a`オプションを指定することで、停止中のコンテナも含めて表示することができる。
+
+## `docker exec -it <コンテナ名> bash`
+指定のコンテナにbashでログインする
+
+## `docker start <コンテナ名>`
+コンテナの起動。
+
+## `docker stop <コンテナ名>`
+コンテナの停止。
+
+## `docker commit <コンテナID> <ユーザー名>/<イメージ名>:<バージョン>
+コンテナのイメージ化を行う。コンテナIDは`docker ps`コマンドで確認できる。
+```bash
+$ docker commit 8be3061220cc sawarame/mycentos6:1.0
+```
+
+## `docker push <イメージ名>`
+docker hubへイメージのアップロードを行う。
+
+## `docker cp <ホストのファイルパス> <コンテナ名>:<コンテナのファイルパス>
+ホストのファイルをコンテナにコピーする
+
+## `docke cp <コンテナ名>:<コンテナのファイルパス> <ホストのファイルパス>
+コンテナのファイルをホストにコピーする
