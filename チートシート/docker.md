@@ -22,13 +22,13 @@ $ docker pull centos:6
 ## `docker rmi <イメージ名>:<バージョン>`
 docketイメージを削除する。
 
-## `docker run -it --name <起動コンテナ名> -d <イメージ名>:<バージョン>`
+## `docker run -itd --name <起動コンテナ名> <イメージ名>:<バージョン>`
 コンテナの作成と起動を行う。  
 `-it`オプションを指定しないとすぐ終了してしまうので、指定する。
 `-d`オプションでバックグラウンド実行する。
 ```bash
 # CetntOS6のイメージを使用してコンテナを作成
-$ docker run -it --name mycentos6 -d centos:6
+$ docker run -itd --name mycentos6 centos:6
 ```
 
 ### 環境変数
@@ -63,6 +63,9 @@ $ docker commit 8be3061220cc sawarame/mycentos6:1.0
 
 ## `docker push <イメージ名>`
 docker hubへイメージのアップロードを行う。
+
+## `docker rm -f <コンテナ名 or コンテナID>`
+dockerコンテナの削除
 
 ## `docker cp <ホストのファイルパス> <コンテナ名>:<コンテナのファイルパス>`
 ホストのファイルをコンテナにコピーする

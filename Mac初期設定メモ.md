@@ -14,6 +14,7 @@
 [Java8]: https://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html
 [OpenJDK]: http://jdk.java.net/
 [Apache Derby]: https://db.apache.org/derby/releases/release-10.14.2.0.cgi
+[docker]: https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
 Macの初期設定メモ
 
@@ -336,8 +337,5 @@ Homebrewでインストール
 brew install cloudfoundry/tap/cf-cli
 ```
 
-## tmuxインストール
-Homebrewでインストール
-```
-brew install tmux
-```
+## dockerインストール
+[公式サイト][docker]よりダウンロードしてインストール
