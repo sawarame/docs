@@ -22,9 +22,8 @@ $ docker pull centos:6
 ## `docker rmi <イメージ名>:<バージョン>`
 docketイメージを削除する。
 
-## `docker run -itd --name <起動コンテナ名> <イメージ名>:<バージョン>`
+## `docker run -d --name <起動コンテナ名> <イメージ名>:<バージョン>`
 コンテナの作成と起動を行う。  
-`-it`オプションを指定しないとすぐ終了してしまうので、指定する。
 `-d`オプションでバックグラウンド実行する。
 ```bash
 # CetntOS6のイメージを使用してコンテナを作成
@@ -42,6 +41,17 @@ $ docker run -itd --name mycentos6 centos:6
 ### ポートフォワーディング
 特定のポート番号を転送させるには`-p`オプションを使用する。  
 `-p <転送元ポート番号>:<転送先ポート番号>`
+
+### CentOS7でsystemctlコマンドを使う場合のコンテナ作成方法
+通常のコンテナ作成方法では`systemctl`コマンドを実行すると`Failed to get D-Bus connection: Operation not permitted`というエラーが発生するので、以下の方法でコンテナを作成する
+```
+docker run -d --privileged --name develop_docker centos:7 /sbin/init
+```
+* `--privileged`オプションを使用する
+* `/sbin/init`で起動する
+
+
+
 
 ## `docker ps [-a]`
 コンテナの一覧を表示する。`-a`オプションを指定することで、停止中のコンテナも含めて表示することができる。
