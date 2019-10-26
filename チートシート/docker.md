@@ -45,12 +45,10 @@ $ docker run -itd --name mycentos6 centos:6
 ### CentOS7でsystemctlコマンドを使う場合のコンテナ作成方法
 通常のコンテナ作成方法では`systemctl`コマンドを実行すると`Failed to get D-Bus connection: Operation not permitted`というエラーが発生するので、以下の方法でコンテナを作成する
 ```
-docker run -d --privileged --name develop_docker centos:7 /sbin/init
+docker run -d --privileged --name mycentos centos:7 /sbin/init
 ```
 * `--privileged`オプションを使用する
 * `/sbin/init`で起動する
-
-
 
 
 ## `docker ps [-a]`
@@ -65,7 +63,7 @@ docker run -d --privileged --name develop_docker centos:7 /sbin/init
 ## `docker stop <コンテナ名>`
 コンテナの停止。
 
-## `docker commit <コンテナID> <ユーザー名>/<イメージ名>:<バージョン>
+## `docker commit <コンテナID> <ユーザー名>/<イメージ名>:<バージョン>`
 コンテナのイメージ化を行う。コンテナIDは`docker ps`コマンドで確認できる。
 ```bash
 $ docker commit 8be3061220cc sawarame/mycentos6:1.0
