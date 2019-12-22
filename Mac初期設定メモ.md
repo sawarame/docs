@@ -1,5 +1,5 @@
 [Xcode]: https://itunes.apple.com/jp/app/xcode/id497799835?mt=12
-[Google Chrome]: https://www.google.co.jp/chrome/
+[Google Chrome]: https://www.google.co.jp/ime/
 [Google IME]: http://b.hatena.ne.jp/hotentry/it
 [Karabiner]: https://pqrs.org/osx/karabiner/
 [iTerm]: https://www.iterm2.com/
@@ -143,6 +143,18 @@ vi ~/.config/karabiner/karabiner.json
                 ]
 ```
 
+## Homebrew
+[公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
+```bash
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+## Myrica Mフォント
+```bash
+$ brew tap homebrew/cask-fonts
+$ brew cask install font-myricam
+```
+
 ## iTerm2
 [公式サイト][iTerm]よりダウンロードしてインストールする
 
@@ -156,7 +168,7 @@ vi ~/.config/karabiner/karabiner.json
 [公式サイト][Visulal Studio Code]よりダウンロードしてインストール
 
 ### 設定
-`Command + K` → `Command + S`でキーボードショートカットを開き、右上の`{}`をクリックして`keybinding.json`を直接開き下記設定を追加する
+`⌘ + K` → `⌘ + S`でキーボードショートカットを開き、右上の`{}`をクリックして`keybinding.json`を直接開き下記設定を追加する
 ```json
 [{
   // 大文字に変換
@@ -174,6 +186,8 @@ vi ~/.config/karabiner/karabiner.json
   "when": "editorTextFocus"
 }]
 ```
+`⌘ + ,`で設定画面を開き`editor.renderWhitespace`に"all"を設定する
+`⌘ + ,`で設定画面を開き`editor.fontFamily`に"MyricaM M"を設定する
 
 ## Clipyインストール
 [公式サイト][Clipy]よりダウンロードしてインストール
@@ -230,12 +244,6 @@ $ cd ~/Downloads/
 $ wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz
 $ tar xvzf openjdk-11.0.2_osx-x64_bin.tar.gz
 $ sudo mv ~/Downloads/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
-```
-
-## Homebrew
-[公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
-```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## Maven
