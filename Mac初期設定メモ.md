@@ -99,6 +99,7 @@ vi ~/.config/karabiner/karabiner.json
 ```
 
 `profiles`->`complex_modifications`->`rules`に下記内容を記載する
+
 ```json
                 "rules": [
                     {
@@ -117,20 +118,25 @@ vi ~/.config/karabiner/karabiner.json
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + e で エスケープ",
+                        "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "e",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_control",
+                                            "left_shift"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "close_bracket",
-                                        "modifiers": "left_control"
+                                        "key_code": "escape"
                                     },
                                     {
                                         "key_code": "lang2"
