@@ -91,6 +91,7 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 
 ### `Caps Lock`キーに`Command`を割り当てる
 `Simple Modifications`タブの`From key`にcaps_lockを設定し、対応する`To key`にはleft_commandを設定する
+`Simple Modifications`タブの`From key`にlang1を設定し、対応する`To key`にはright_commandを設定する
 
 ### viノーマルモード移行時に日本語入力を解除するようにする
 下記jsonファイルを編集
@@ -122,11 +123,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + j で escape",
+                        "description": "shift + ctrl + u で escape",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -147,11 +148,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + h で delete",
+                        "description": "shift + ctrl + i で delete",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "h",
+                                    "key_code": "i",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -162,6 +163,94 @@ vi ~/.config/karabiner/karabiner.json
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + j で 全角(日本語)切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "lang1"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + k で 半角(英字)切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "lang2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + space で down_arrow",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + n で down_arrow",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
