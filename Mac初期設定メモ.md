@@ -122,11 +122,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + e で エスケープ",
+                        "description": "shift + ctrl + j で escape",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "e",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -140,6 +140,28 @@ vi ~/.config/karabiner/karabiner.json
                                     },
                                     {
                                         "key_code": "lang2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + h で delete",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace"
                                     }
                                 ],
                                 "type": "basic"
