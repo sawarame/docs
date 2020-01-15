@@ -169,11 +169,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + j で 全角(日本語)切り替え",
+                        "description": "shift + ctrl + n で 全角(日本語)切り替え",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "n",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -191,33 +191,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + k で 半角(英字)切り替え",
+                        "description": "shift + ctrl + j で down_arrow",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "lang2"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + space で down_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -235,11 +213,11 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     },
                     {
-                        "description": "shift + ctrl + n で down_arrow",
+                        "description": "shift + ctrl + k で up_arrow",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
@@ -255,9 +233,52 @@ vi ~/.config/karabiner/karabiner.json
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "shift + ctrl + h で left_arrow",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + ctrl + l で right_arrow",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
-
 ```
 
 ## Homebrew
