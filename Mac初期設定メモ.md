@@ -61,6 +61,27 @@ $ touch ~/.bashrc
 $ chmod +x ~/.bashrc
 ```
 
+# `./vimrc` 作成
+```
+$ vi ~/.vimrc
+
+# 下記内容を記載
+syntax on
+set nu
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smartindent
+
+set list
+set listchars=tab:»-,trail:･,nbsp:･
+hi NonText ctermbg=None ctermfg=59 guibg=NONE guifg=None
+hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=None
+```
+
 # 秘密鍵・公開鍵の作成
 ```bash
 ssh-keygen -t rsa -b 4096 -C <メールアドレス>
