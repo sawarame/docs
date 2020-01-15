@@ -257,6 +257,7 @@ vi ~/.config/karabiner/karabiner.json
                         ]
                     }
                 ]
+
 ```
 
 ## Homebrew
