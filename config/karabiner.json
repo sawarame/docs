@@ -214,15 +214,17 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + [ で アプリケーション切り替え",
+                        "description": "ctrl + h で アプリケーション切り替え",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control",
-                                            "left_gui"
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -240,15 +242,17 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + ] で アプリケーション切り替え",
+                        "description": "ctrl + l で アプリケーション切り替え",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "backslash",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control",
-                                            "left_gui"
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -265,15 +269,17 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + m で アプリケーション内のウィンドウ切り替え",
+                        "description": "ctrl + j で アプリケーション内のウィンドウ切り替え",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "m",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control",
-                                            "left_gui"
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
