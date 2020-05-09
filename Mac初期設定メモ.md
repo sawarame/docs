@@ -121,232 +121,8 @@ vi ~/.config/karabiner/karabiner.json
 
 `profiles`->`complex_modifications`->`rules`に下記内容を記載する
 
-```json
-                "rules": [
-                    {
-                        "description": "viノーマルモード移行時にかなモード解除",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "lang2"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + u で escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "lang2"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + i で delete",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + n で 全角(日本語)切り替え",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "lang1"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + j で down_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + k で up_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + h で left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + l で right_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + [ で アプリケーション切り替え",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [ "right_gui", "left_shift" ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift + ctrl + ] で アプリケーション切り替え",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "backslash",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [ "right_gui" ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-```
+https://github.com/sawarame/docs/blob/master/config/karabiner.json
+
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
@@ -415,9 +191,9 @@ $ brew cask install font-myricam
 ※ 無料で使用できるのはCommunity
 
 ### ショートカットキー変更
-`Command`+`,`で設定画面を開く  
-`Plugins`で`VS Code Keymap`をインストールする  
-再起動後、`Command`+`,`で再度設定画面を開く  
+`Command`+`,`で設定画面を開く
+`Plugins`で`VS Code Keymap`をインストールする
+再起動後、`Command`+`,`で再度設定画面を開く
 `Keymap`に`VS Code`を選択する
 
 ## Alfred3
@@ -431,7 +207,7 @@ $ brew cask install font-myricam
 [公式サイト][AppCleaner]よりダウンロードしてインストールする
 
 ## Java
-[公式サイト][Java8]よりダウンロードしてインストールする  
+[公式サイト][Java8]よりダウンロードしてインストールする
 まずはJava8をインストール
 
 インストール完了後下記コマンドでパスを通す
@@ -508,7 +284,7 @@ $ mysql.server stop
 * データディレクトリ：`/usr/local/var/mysql/`(MySQLコンソールで`show variables like 'datadir';`)
 
 ## Apache Derby
-[公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する  
+[公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する
 下記はzipでダウンロードした物をホームディレクトリのdevフォルダに展開する例
 ```bash
 $ cd ~/dev
