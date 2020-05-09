@@ -82,50 +82,6 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + n で 全角(日本語)切り替え",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_gui"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "lang1"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "command + ctrl + i で 半角切り替え",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_gui"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "lang2"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "command + ctrl + j で down_arrow",
                         "manipulators": [
                             {
@@ -290,6 +246,82 @@
                                             "left_control",
                                             "left_shift"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ctrl + k で アプリケーション内のウィンドウ切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ctrl + n で 全角(日本語)切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "lang1"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ctrl + i で 半角切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "lang2"
                                     }
                                 ],
                                 "type": "basic"
