@@ -35,7 +35,7 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + hjkl で 方向キー",
+                        "description": "ctrl + hjkl で 方向キー",
                         "manipulators": [
                             {
                                 "from": {
@@ -129,11 +129,53 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "right_gui"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "right_gui",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
                                             "left_gui"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "right_gui",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "right_gui"
                                         ]
                                     }
                                 },
@@ -297,7 +339,7 @@
                         ]
                     },
                     {
-                        "description": "ctrl + t で アプリケーション切り替え",
+                        "description": "ctrl + t で tab",
                         "manipulators": [
                             {
                                 "from": {
@@ -313,10 +355,44 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "right_gui"
+                                        "key_code": "tab"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "shift + right_command で space",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
                                         ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar"
                                     }
                                 ],
                                 "type": "basic"
@@ -451,7 +527,7 @@
                                 "pointing_button": "button3"
                             },
                             "to": {
-                                "key_code": "right_command"
+                                "key_code": "left_command"
                             }
                         }
                     ]
