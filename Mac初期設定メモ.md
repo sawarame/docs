@@ -21,51 +21,45 @@ Macの初期設定メモ
 
 # システム環境設定
 
-* `Dock` → `書類を開くときはタブで開く`に`常に`を選択する
-* `Dock` → `Dockを自動的に表示・非表示`にチェックを入れる
-* `Mission Control` -> `最新の使用状況に基づいて操作スペースを自動的に並べ替える`のチェックを外す
-* `ディスプレイ` → `解像度`を`変更`に設定し、`スペースを拡大`を選択する
-* `キーボード` → `ショートカット` → `MissionControl`
-  * `MissionControl` : `control + shift + Q`に設定
-  * `右の操作スペースに移動` : `control + shift + ]`に設定
-  * `左の操作スペースに移動` : `control + shift + [`に設定
-* `キーボード` → `ショートカット` → `入力ソース`
-  * `前の入力ソースを選択`のチェックを外す
-  * `入力メニューの次のソースを選択`のチェックを外す
-* `キーボード` → `入力ソース` → `日本語`
-  * `ライブ変換`のチェックを外す
-  * `Windows風のキー操作`にチェックを入れる
-  * `候補表示`:`フォント`を`ヒラギノ角ゴシックW1`に変更
-  * `候補表示`:`フォントサイズ`を`12`に変更
-* `共有` → `コンピューター名` → `編集`をクリックしてホスト名を設定する
+* `Dock` → `Prefer tabs when opening doduments:`に`Always`を選択する
+* `Dock` → `Aoutmatically hide and show the Dock`にチェックを入れる
+* `Mission Control` -> `Automatically rearrange Spaces based on most recent use`のチェックを外す
+* `Keyboad` → `Shortcuts` → `Input Source`
+  * `Select the previous input source`のチェックを外す
+  * `Select next source in Input menu`のチェックを外す
+* `Sharing` → `Computer Name` → `Edit`をクリックしてホスト名を設定する
 
-# `.bash_profile` `.bashrc`作成
-`.bash_profile`を編集
-```bash
-$ vi ~/.bash_profile
+# `.zsh_profile` `.zshrc`作成
+`.zsh_profile`を編集
+```sh
+$ vi ~/.zsh_profile
+```
 
-# 下記内容を記載
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+下記内容を記載
+```
+if [ -f ~/.zshrc ]; then
+    . ~/.zshrc
 fi
 ```
 
-`.bash_profile`に実行権限を付与
-```bash
-$ chmod +x ~/.bash_profile
+`.zsh_profile`に実行権限を付与
+```sh
+$ chmod +x ~/.zsh_profile
 ```
 
-下記コマンドで`.bashrc`を作成する
-```bash
-$ touch ~/.bashrc
-$ chmod +x ~/.bashrc
+下記コマンドで`.zshrc`を作成する
+```sh
+$ touch ~/.zshrc
+$ chmod +x ~/.zshrc
 ```
 
 # `./vimrc` 作成
 ```
 $ vi ~/.vimrc
+```
 
-# 下記内容を記載
+下記内容を記載
+```
 syntax on
 set nu
 
@@ -89,9 +83,6 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 
 # アプリインストール
 
-## Xcode
-[App Store][Xcode]からインストール
-
 ## Google Chrome
 [公式サイト][Google Chrome]よりダウンロードしてインストール
 
@@ -99,30 +90,32 @@ ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 [公式サイト][Google IME]よりダウンロードしてインストール
 
 下記辞書登録を行う
-|よみ|単語|
+|Reading|Word|
 |---|---|
 |コマンド|⌘|
 |オプション|⌥|
 |シフト|⇧|
 |コントロール|⌃|
 
+
 ## Karabinerインストール
 [公式サイト][Karabiner]よりインストール
 
-### `Caps Lock`キーに`Command`を割り当てる
-`Simple Modifications`タブの`From key`にcaps_lockを設定し、対応する`To key`にはleft_commandを設定する
-`Simple Modifications`タブの`From key`にlang1を設定し、対応する`To key`にはright_commandを設定する
-
-### viノーマルモード移行時に日本語入力を解除するようにする
-下記jsonファイルを編集
-```bash
-vi ~/.config/karabiner/karabiner.json
-```
-
-`profiles`->`complex_modifications`->`rules`に下記内容を記載する
-
+### 設定ファイル反映
+`~/.config/karabiner/karabiner.json`に下記の内容を記載する
 https://github.com/sawarame/docs/blob/master/config/karabiner.json
 
+
+## Alfred3
+[公式サイト][Alfred]よりダウンロードしてインストールする
+
+### `Preferences` 設定
+* `General` → `Alfred Hotky`を`⌃ + space`に変更
+* `Advanced` → `Force Keyboard`に`Alphanumeric (Google)`を選択
+
+
+## iTerm2
+[公式サイト][iTerm]よりダウンロードしてインストールする
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
@@ -131,44 +124,49 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ```
 
 ## Myrica Mフォント
+Homebrewでインストール
 ```bash
 $ brew tap homebrew/cask-fonts
 $ brew cask install font-myricam
 ```
 
-## iTerm2
-[公式サイト][iTerm]よりダウンロードしてインストールする
-
-## Atom
-[公式サイト][Atom]よりダウンロードしてインストール
-
-## Sublime Text
-[公式サイト][Sublime Text]よりダウンロードしてインストール
-
 ## Visual Studio Code
 [公式サイト][Visulal Studio Code]よりダウンロードしてインストール
 
 ### 設定
-`⌘ + K` → `⌘ + S`でキーボードショートカットを開き、右上の`{}`をクリックして`keybinding.json`を直接開き下記設定を追加する
+`⌘ + ,`で設定画面を開き下記設定を入力
+- `editor.renderWhitespace`に`all`を選択する
+- `editor.fontFamily`に`MyricaM M`を設定する
+- `files.insertFinalNewline`にチェックを入れる
+- `files.trimFinalNewlines`にチェックを入れる
+- `files.insertFinalNewline`にチェックを入れる
+
+setting.json
 ```json
-[{
-  // 大文字に変換
-  "key": "ctrl+shift+u",
-  "command": "editor.action.transformToUppercase"
-},{
-  // カーソル位置から行頭まで選択
-  "key": "ctrl+shift+a",
-  "command": "cursorHomeSelect",
-  "when": "editorTextFocus"
-}, {
-  // カーソル位置から行末まで選択
-  "key": "ctrl+shift+e",
-  "command": "cursorEndSelect",
-  "when": "editorTextFocus"
-}]
+{
+    "editor.renderWhitespace": "all",
+    "editor.fontFamily": "MyricaM M",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true
+}
 ```
-`⌘ + ,`で設定画面を開き`editor.renderWhitespace`に"all"を設定する
-`⌘ + ,`で設定画面を開き`editor.fontFamily`に"MyricaM M"を設定する
+
+### EXTENSIONS
+下記拡張機能をインストールする
+- Project Manager
+- Vim
+- PHP Inteliephense
+
+## Sublime Text
+[公式サイト][Sublime Text]からダウンロードしてインストール
+
+### install package Control
+`⌘ + ⇧ + p`でを入力してPackege Controlをインストールする
+`⌘ + ⇧ + p`で`package Contorl: install Package`と入力、`Alinment`をインストールする
+
+### vimモードを有効にする
+`⌘ + ,`で設定ファイルを開き、`ignored_packages`の`Vintage`を削除する
 
 ## Clipyインストール
 [公式サイト][Clipy]よりダウンロードしてインストール
@@ -179,29 +177,29 @@ $ brew cask install font-myricam
 |メニュー|ショートカット|
 |---|---|
 |メイン|割当なし|
-|履歴|⇧⌃C|
-|スニペット|⇧⌃S|
+|履歴|`⇧ + ⌃ + o`|
+|スニペット|`⇧ + ⌃ + p`|
 
 |履歴|ショートカット|
 |---|---|
 |履歴をクリア|割当なし|
+
+
+---
+---
+
+
 
 ## IntelliJ IDEA
 [公式サイト][IntelliJ IDEA]よりダウンロードしてインストールする
 ※ 無料で使用できるのはCommunity
 
 ### ショートカットキー変更
-`Command`+`,`で設定画面を開く
+`⌘ + ,`で設定画面を開く
 `Plugins`で`VS Code Keymap`をインストールする
-再起動後、`Command`+`,`で再度設定画面を開く
+再起動後、`⌘ + ,`で再度設定画面を開く
 `Keymap`に`VS Code`を選択する
 
-## Alfred3
-[公式サイト][Alfred]よりダウンロードしてインストールする
-
-### `Preferences` 設定
-* `General` → `Alfred Hotky`を`control + space`に変更
-* `Advanced` → `Force Keyboard`に`Romaji`を選択
 
 ## AppCleaner
 [公式サイト][AppCleaner]よりダウンロードしてインストールする
