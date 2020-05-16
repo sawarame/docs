@@ -77,7 +77,7 @@ hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=None
 ```
 
 # 秘密鍵・公開鍵の作成
-```bash
+```sh
 ssh-keygen -t rsa -b 4096 -C <メールアドレス>
 ```
 
@@ -119,16 +119,42 @@ https://github.com/sawarame/docs/blob/master/config/karabiner.json
 
 ## Homebrew
 [公式サイト][Homebrew]よりインストールコマンドを確認し、ターミナルで実行する
-```bash
+```sh
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## Myrica Mフォント
 Homebrewでインストール
-```bash
+```sh
 $ brew tap homebrew/cask-fonts
 $ brew cask install font-myricam
 ```
+
+## php
+Homebrewでインストール
+```sh
+$ brew install php@7.3
+```
+
+インストール中に表示された環境変数PATHの設定を行う
+
+```sh
+$ echo 'export PATH="/usr/local/opt/apr/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/apr-util/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/openldap/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/openldap/sbin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/curl-openssl/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/python@3.8/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/icu4c/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/icu4c/sbin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/krb5/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/krb5/sbin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/php@7.3/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/php@7.3/sbin:$PATH"' >> ~/.zshrc
+````
 
 ## Visual Studio Code
 [公式サイト][Visulal Studio Code]よりダウンロードしてインストール
@@ -209,7 +235,7 @@ setting.json
 まずはJava8をインストール
 
 インストール完了後下記コマンドでパスを通す
-```bash
+```sh
 echo 'export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ```
@@ -217,7 +243,7 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 ※ Javaは複数バージョンインストール可能。現在インストールされているバージョンを確認するときは`/usr/libexec/java_home`コマンドで確認できる。
 11以上をインストールするときは[OpenJDK][OpenJDK]よりダウンロードして使用する（ライセンスの都合上）。
 
-```bash
+```sh
 # JDK11をインストール
 $ cd ~/Downloads/
 $ wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz
@@ -227,12 +253,12 @@ $ sudo mv ~/Downloads/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines/
 
 ## Maven
 Homebrewでインストール
-```bash
+```sh
 $ brew install maven
 ```
 
 インストール完了後下記コマンドでパスを通す
-```bash
+```sh
 $ echo 'export M3_HOME=/usr/local/Cellar/maven/3.6.0/libexec' >> ~/.bashrc
 $ echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
 ```
@@ -240,16 +266,16 @@ $ echo 'export PATH=$M3_HOME/bin:$PATH' >> ~/.bashrc
 
 ## Node.js
 まずHomebrewよりNodebrewをインストール
-```bash
+```sh
 $ brew install nodebrew
 $ nodebrew setup
 ```
 インストール後下記コマンドでパスを通す
-```bash
+```sh
 $ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
 ```
 次にNode.js本体をインストールする
-```bash
+```sh
 $ nodebrew install-binary latest
 $ nodebrew use 11
 # インストールされたNode.jsのバージョンと現在使用してるバージョンは下記コマンドで確認できる
@@ -258,22 +284,22 @@ $ nodebrew ls
 
 ## MySQL
 Homebrewでインストール
-```bash
+```sh
 $ brew install mysql
 ```
 
 ### 起動
-```bash
+```sh
 $ mysql.server start
 ```
 
 ### 初期設定
-```bash
+```sh
 $ mysql_secure_installation
 ```
 
 ### 停止
-```bash
+```sh
 $ mysql.server stop
 ```
 
@@ -284,36 +310,36 @@ $ mysql.server stop
 ## Apache Derby
 [公式サイト][Apache Derby]よりバイナリをダウンロードして任意のフォルダに展開する
 下記はzipでダウンロードした物をホームディレクトリのdevフォルダに展開する例
-```bash
+```sh
 $ cd ~/dev
 $ unzip ~/Downloads/db-derby-10.14.2.0-bin.zip
 ```
 
 下記コマンドでパスを通す
-```bash
+```sh
 $ echo 'export DERBY_HOME=$HOME/dev/db-derby-10.14.2.0-bin' >> ~/.bashrc
 ```
 
 永続化用フォルダを作成する
-```bash
+```sh
 $ mkdir ~/derby
 ```
 
 Derbyの起動
-```bash
+```sh
 $ cd ~/derby
 $ java -jar $DERBY_HOME/lib/derbyrun.jar server start &
 ```
 
 CLIの起動〜終了
-```bash
+```sh
 $ cd ~/derby
 $ java -jar $DERBY_HOME/lib/derbyrun.jar ij
 ij> quit;
 ```
 
 Derbyの終了
-```bash
+```sh
 $ cd ~/derby
 $ java -jar $DERBY_HOME/lib/derbyrun.jar server shutdown
 ```
