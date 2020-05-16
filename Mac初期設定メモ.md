@@ -162,8 +162,8 @@ setting.json
 [公式サイト][Sublime Text]からダウンロードしてインストール
 
 ### install package Control
-`⌘ + ⇧ + p`でを入力してPackege Controlをインストールする
-`⌘ + ⇧ + p`で`package Contorl: install Package`と入力、`Alinment`をインストールする
+- `⌘ + ⇧ + p`でを入力してPackege Controlをインストールする
+- `⌘ + ⇧ + p`で`package Contorl: install Package`と入力、`Alinment`をインストールする
 
 ### vimモードを有効にする
 `⌘ + ,`で設定ファイルを開き、`ignored_packages`の`Vintage`を削除する
@@ -177,8 +177,8 @@ setting.json
 |メニュー|ショートカット|
 |---|---|
 |メイン|割当なし|
-|履歴|`⇧ + ⌃ + o`|
-|スニペット|`⇧ + ⌃ + p`|
+|履歴|`⌃ + ⌘ + o`|
+|スニペット|`⌃ + ⌘ + p`|
 
 |履歴|ショートカット|
 |---|---|
