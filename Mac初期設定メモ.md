@@ -162,6 +162,7 @@ $ echo 'export PATH="/usr/local/opt/php@7.3/sbin:$PATH"' >> ~/.zshrc
 ### 設定
 `⌘ + ,`で設定画面を開き下記設定を入力
 - `editor.renderWhitespace`に`all`を選択する
+- `editor.renderControlCharacters`にチェックを入れる
 - `editor.fontFamily`に`MyricaM M`を設定する
 - `files.insertFinalNewline`にチェックを入れる
 - `files.trimFinalNewlines`にチェックを入れる
@@ -188,8 +189,8 @@ setting.json
 [公式サイト][Sublime Text]からダウンロードしてインストール
 
 ### install package Control
-- `⌘ + ⇧ + p`でを入力してPackege Controlをインストールする
-- `⌘ + ⇧ + p`で`package Contorl: install Package`と入力、`Alinment`をインストールする
+- `⌘ + ⇧ + p`で`install Pakage control`を入力してPackege Controlをインストールする
+- `⌘ + ⇧ + p`で`package Contorl: install Package`と入力、`Alinment`をインストールする
 
 ### vimモードを有効にする
 `⌘ + ,`で設定ファイルを開き、`ignored_packages`の`Vintage`を削除する
