@@ -209,7 +209,7 @@
                         ]
                     },
                     {
-                        "description": "command + ctrl + h or l で タブ切り替え",
+                        "description": "command + ctrl + hjkl で タブ切り替え",
                         "manipulators": [
                             {
                                 "from": {
@@ -223,9 +223,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "open_bracket",
                                         "modifiers": [
-                                            "left_control",
+                                            "right_gui",
                                             "left_shift"
                                         ]
                                     }
@@ -244,19 +244,15 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "close_bracket",
                                         "modifiers": [
-                                            "left_control"
+                                            "right_gui",
+                                            "left_shift"
                                         ]
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "command + ctrl + j or k で アプリケーション内のウィンドウ切り替え",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
                                     "key_code": "j",
@@ -269,9 +265,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde",
+                                        "key_code": "tab",
                                         "modifiers": [
-                                            "right_gui"
+                                            "left_control"
                                         ]
                                     }
                                 ],
@@ -284,6 +280,31 @@
                                         "mandatory": [
                                             "left_control",
                                             "left_gui"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ctrl + m で アプリケーション内のウィンドウ切り替え",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
                                         ]
                                     }
                                 },
