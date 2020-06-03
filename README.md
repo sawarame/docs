@@ -214,6 +214,30 @@ setting.json
 |履歴をクリア|割当なし|
 
 
+## Node.js
+まずHomebrewよりNodebrewをインストール
+
+```sh
+% brew install nodebrew
+% nodebrew setup
+```
+
+インストール後下記コマンドでパスを通す
+
+```sh
+% echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.zshrc
+```
+
+次にnodebrewを使ってNode.js本体をインストールする
+
+```sh
+% nodebrew install-binary latest
+% nodebrew use 14
+# インストールされたNode.jsのバージョンと現在使用してるバージョンは下記コマンドで確認できる
+% nodebrew ls
+```
+
+
 ---
 ---
 
