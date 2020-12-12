@@ -168,7 +168,7 @@ $ echo 'export PATH="/usr/local/opt/php@7.3/sbin:$PATH"' >> ~/.zshrc
 - `editor.fontFamily`に`MyricaM M`を設定する
 - `files.insertFinalNewline`にチェックを入れる
 - `files.trimFinalNewlines`にチェックを入れる
-- `files.insertFinalNewline`にチェックを入れる
+- `files.trimTrailingWhitespace`にチェックを入れる
 
 setting.json
 ```json
