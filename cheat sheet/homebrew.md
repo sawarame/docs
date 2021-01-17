@@ -3,7 +3,7 @@ Homebrewのコマンドまとめ
 ## `brew install <formula>`
 パッケージのインストール。`fomula`はパッケージ名を指定。
 
-## `brew search text`
+## `brew search <text>`
 `text`でパッケージ名を指定し、インストール可能なパッケージの検索ができる。`/text/`とすることで正規表現使用可能。
 
 ## `brew list`
