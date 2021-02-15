@@ -20,4 +20,5 @@
 個人的なドキュメントとか
 
 ## メモ
-https://github.com/sawarame/docs/blob/master/memo/mac_install.md
+- [Macインストールメモ](https://github.com/sawarame/docs/blob/master/memo/mac_install.md)
+- [Mac(ARM版)インストールメモ](https://github.com/sawarame/docs/blob/master/memo/mac_install.md)
