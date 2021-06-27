@@ -103,6 +103,13 @@ $ brew install composer
 - Vim
 - PHP Inteliephense
 
+#### vimでカーソル移動の長押しが聞かないとき
+下記コマンドを入力する
+```bash
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
+```
+
 ### Sublime Text
 [公式サイト](http://www.sublimetext.com/)からダウンロードしてインストール
 
