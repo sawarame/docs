@@ -120,6 +120,18 @@ defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 #### vimモードを有効にする
 `⌘ + ,`で設定ファイルを開き、`ignored_packages`の`Vintage`を削除する
 
+### OpenJDK
+```bash
+wget https://cdn.azul.com/zulu/bin/zulu11.48.21-ca-jdk11.0.11-macosx_aarch64.tar.gz
+tar xvzf zulu11.48.21-ca-jdk11.0.11-macosx_aarch64.tar.gz
+sudo mv zulu11.48.21-ca-jdk11.0.11-macosx_aarch64/zulu-11.jdk /Library/Java/JavaVirtualMachines/
+/usr/libexec/java_home  -V
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+java -version
+```
+
+### IntelliJ IDEA
+[公式サイト](https://www.jetbrains.com/ja-jp/idea/download/#section=mac)からダウンロード
 ## その他
 
 ### karabiner elements
