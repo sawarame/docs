@@ -15,7 +15,6 @@ passwd worker
 usermod -G wheel worker
 ```
 
-
 ## ソフトウェア・アップデート
 
 ```bash
@@ -38,4 +37,26 @@ sudo docker run hello-world
 sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+```
+
+## zshインストール
+```bash
+sudo yum -y install zsh
+chsh -s /bin/zsh
+```
+
+### Prezto
+```bash
+$ cp -p .zshrc{, `date + _%Y%m%d`}
+$ cp -p .zprofile{, `date + _%Y%m%d`}
+$ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+$ setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+### hstrインストール
+```bash
+sudo yum -y install hstr
 ```

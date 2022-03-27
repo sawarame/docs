@@ -339,3 +339,25 @@ fixするまでインストールは見送ることにする
                         ]
                     }
 ```
+
+### iTerm2
+[公式サイト](https://iterm2.com/)よりダウンロードしてインストールする
+
+
+### Prezto
+```bash
+$ cp -p .zshrc{, `date + _%Y%m%d`}
+$ cp -p .zprofile{, `date + _%Y%m%d`}
+$ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+$ setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+### hstr
+```sh
+# Homebrewでインストール
+$ brew install hstr
+$ hstr --show-zsh-configuration >> ~/.zshrc
+```
